@@ -1,3 +1,6 @@
+
+//To find the factorial of a number using recursive function
+
 class Fact
 {
 //     static int a;
