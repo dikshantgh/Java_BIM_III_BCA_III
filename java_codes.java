@@ -61,3 +61,74 @@ class PrimeCheck {
         }
     }
 }
+
+
+
+
+// Method overloading example
+//Method Overloading is a feature that allows a class to have more than one method having the same name, if their argument lists are different.
+//Argument list are different in:
+//1. By changing the number of parameters.
+//2. By changing the data type of parameters.
+
+class Box
+{
+   
+   void volume(int l, int b, int h)
+   {
+       System.out.println("The volume of rectangle is "+ (l*b*h));
+   }
+   void volume(int l) //method overloading
+   {
+       System.out.println("The volume of square is "+ (l*l*l));
+   }
+}
+public class BoxDemo {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Box b = new Box();
+        b.volume(10,5,20); 
+        b.volume(5);
+    }
+    
+}
+
+
+
+
+// to take two words as an input from user and display the longest word.
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author dikshant
+ */
+public class LongestString {
+
+    public static void main(String[] args) {
+       Scanner sc = new Scanner(System.in);
+       System.out.println("Enter two words:");
+       String word1 = sc.next();
+       String word2 = sc.next();
+       
+       if(word1.length() > word2.length())
+       {
+           System.out.println("The longest is "+ word1);
+       }
+       else if(word1.length() < word2.length())
+       {
+            System.out.println("The longest is "+ word2);
+       }
+       else
+       {
+           System.out.println("Both are of same length");
+       }
+    }
+    
+}
+
+
