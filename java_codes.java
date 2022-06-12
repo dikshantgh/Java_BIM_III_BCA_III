@@ -28,3 +28,36 @@ public class FactorialMain {
     }
     
 }
+
+
+
+
+// TO print all the prime number within a given range
+
+import java.util.Scanner;
+class PrimeCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n1, n2;
+        do{
+        System.out.println("Enter the starting and ending rangegreater than 1:");
+        n1 = sc.nextInt();
+        n2 = sc.nextInt();
+        }while(n1<2 | n2<2);
+        boolean flag;
+        for(int i=n1;i<=n2;i++)
+        {
+            flag =true;
+            for(int j=2;j<=i/2;j++)
+            {
+                if(i%j==0)
+                {
+                    flag =false;
+                    break;
+                }
+            }
+            if(flag)
+                System.out.println(i+"\t");
+        }
+    }
+}
