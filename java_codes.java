@@ -132,3 +132,78 @@ public class LongestString {
 }
 
 
+
+
+//Q.3 [2021]
+/**
+ *
+ * @author dikshant
+ */
+class Member
+{
+    String name, address;
+    int age, salary, phone;
+    
+    void setMemberDetails(String name, String address, int age, int phone, int salary)
+    {
+        this.name = name;
+        this.address = address;
+        this.age = age;
+        this.phone = phone;
+        this.salary = salary;
+    }
+    void printMemberDetails()
+    {
+        System.out.printf("\nThe name is %s\nThe address is %s\nThe age is "
+                    + "%d\nThe phone is %d\nThe salary is %d",name,address, age,phone,salary);     
+    }
+}
+
+class Manager extends Member
+{
+    String department;
+    
+    void setDepartment(String department)
+    {
+        this.department = department;
+    }
+    void printDepartment()
+    {
+        System.out.println("\nThe department is "+ department);
+    }
+}
+
+class Employee extends Member
+{
+    String specialization;
+    void setSpecialization(String specialization)
+    {
+        this.specialization = specialization;
+    }
+    void printSpecialization()
+    {
+        System.out.println("\nThe specialization is "+ specialization);
+    }
+}
+
+public class EmployeeDemo {
+    public static void main(String[] args) {
+        Employee e1 = new Employee();
+        Manager m1 = new Manager();
+        e1.setMemberDetails("Ram", "Kathmandu", 35, 551135, 80000);
+        m1.setMemberDetails("Hari", "Hetauda", 28, 551136, 90000);
+        e1.printMemberDetails();
+        m1.printMemberDetails();
+        e1.setSpecialization("Java Programming");
+        e1.printSpecialization();
+        m1.setDepartment("IT");
+        m1.printDepartment();
+        
+        
+    }
+    
+}
+
+
+
+
