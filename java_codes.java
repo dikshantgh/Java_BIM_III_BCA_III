@@ -207,7 +207,37 @@ public class EmployeeDemo {
 
 
 
-// 
+//program to create the string array of size n and take n inputs from the user and replace 'i' with '#'
+import java.util.Scanner;
+
+/**
+ *
+ * @author dikshant
+ */
+
+public class Demo {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("How many names you want to enter:");
+        int n = sc.nextInt();
+        System.out.printf("Enter %d names\n", n);
+        String names[]= new String[n];
+        sc.nextLine(); // to resolve the skipping problem
+        for(int i=0;i<n;i++)
+        {
+          names[i]= sc.nextLine();
+          names[i]=names[i].replace("b","#");
+        }
+        for(int i=0;i<n;i++)
+        {
+            System.out.println(names[i]);
+        }
+    }
+}
+    
+
+ 
 
 
 
