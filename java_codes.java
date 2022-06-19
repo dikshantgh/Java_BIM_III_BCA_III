@@ -238,11 +238,61 @@ public class Demo {
     
 
  
+// Write a simple program to show the use of method overloading, method overriding and super in the same program.
 
+/**
+ *
+ * @author dikshant
+ */
 
+class Vehicle
+{
+    String color;
 
+    Vehicle(String color) {
+        this.color = color;
+    }
+    
+    void turnOnRadio()
+    {
+        System.out.println("The radio is turned On inside the vehicle with color "+color);
+    }
+}
 
+class Car extends Vehicle
+{
+    Car(String color)
+    {
+        super(color);  //using super to call the Vehilce class constructor
+    }
+    
+    void turnLight()   // function overloading 
+    {
+        System.out.println("The light in on!!");
+    }
+    
+    void turnLight(int brightness)    // function overloading
+    {
+        System.out.println("The light is turned On to brightness "+ brightness+" with color "+color );
+    }
+    
+    @Override
+    void turnOnRadio()
+    {
+        super.turnOnRadio();
+        System.out.println("The radio is turned On inside the Car");
+    }
+}
 
+public class OverloadingOverRidingSuper {
+    public static void main(String[] args) {
+        Car c1 = new Car("Red");
+        c1.turnOnRadio();
+        c1.turnLight();
+        c1.turnLight(12);
+    }
+    
+}
 
 
 
