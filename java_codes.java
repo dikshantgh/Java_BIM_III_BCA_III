@@ -328,5 +328,41 @@ class HelloWorld {
 
 
 
-//Q. 13 [2018]
+//Q. 13 [2016] [Interface]
+
+//Calculate.java [Interface]
+public interface Calculate {
+    int add(int x, int y);
+    int diff(int x, int y);
+    
+}
+
+// CalculateDemo.java
+class Calulator implements Calculate
+{
+    @Override
+    public int add(int x, int y)
+    {
+        return x+y;
+    }
+    
+    @Override
+    public int diff(int x, int y)
+    {
+        return x-y;
+    }
+}
+public class CalculateDemo {
+
+    public static void main(String[] args) {
+        Calulator c1 = new Calulator();
+        System.out.println("The sum is "+c1.add(15,10));
+        System.out.println("The difference is "+ c1.diff(15,10));
+    }
+    
+}
+
+
+
+
 
