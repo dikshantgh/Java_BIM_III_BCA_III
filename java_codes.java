@@ -366,3 +366,8 @@ public class CalculateDemo {
 
 
 
+// how to achieve multiple inheritance in java
+
+//Multiple inheritance in Java can be achieved using interface. Either a class implements multiple interfaces or an interface itself extends multiple interfaces
+
+
