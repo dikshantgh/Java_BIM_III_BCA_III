@@ -412,7 +412,7 @@ class Demo {
 https://github.com/dikshantgh/Java-I_BIM_III/blob/main/ambiguous_method.png
 ![My Image](ambiguous_method.png)
 
-
+![alt text](https://github.com/dikshantgh/Java-I_BIM_III/blob/main/ambiguous_method.png?raw=true)
 
 
 
