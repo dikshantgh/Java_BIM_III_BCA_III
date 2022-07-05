@@ -365,9 +365,59 @@ public class CalculateDemo {
 
 
 
+// Q. ambigious invocation in Java
 
-// how to achieve multiple inheritance in java
+//Ans :  Sometimes there may be two or more possible matches for an invocation of a method, but the compiler cannot determine the most specific
+// match. This is referred to as ambiguous invocation.
+// The informal intuition is that one method is more specific than another if any invocation handled by the first method could be passed on to 
+// the other one without a compile-time type error. 
 
-//Multiple inheritance in Java can be achieved using interface. Either a class implements multiple interfaces or an interface itself extends multiple interfaces
+//ambiguous method overloading
+class Demo {
+    
+    double add(int n1,double n2)
+    {
+        return n1+n2;
+    }
+    
+    double add (double n1, int n2)
+    {
+        return (n1+n2+10);
+    }
+    public static void main(String[] args) {
+        Demo h1 = new Demo();
+        System.out.println(h1.add(2,3));    
+    }
+}
+
+//ambiguous method overloading in case of vargargs
+class Demo {
+    
+    String add(int... s)
+    {
+        return "int agrs";
+    }
+    
+    String add (boolean... z)
+    {
+        return "boolean args";
+    }
+    public static void main(String[] args) {
+        Demo h1 = new Demo();
+        System.out.println(h1.add());
+    }
+}
+
+
+
+
+
+
+
+
+
+// Q. how to achieve multiple inheritance in java
+
+//Ans : Multiple inheritance in Java can be achieved using interface. Either a class implements multiple interfaces or an interface itself extends multiple interfaces
 
 
