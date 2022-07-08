@@ -408,16 +408,95 @@ class Demo {
     }
 }
 
-
+// Image below is the reference
 https://github.com/dikshantgh/Java-I_BIM_III/blob/main/ambiguous_method.png
-![My Image](ambiguous_method.png)
-
-![alt text](https://github.com/dikshantgh/Java-I_BIM_III/blob/main/ambiguous_method.png?raw=true)
 
 
+
+
+// Q User defined exception and built-in exception both
+
+package exceptionlab;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author dikshant
+ */
+
+class MyException extends Exception
+{
+
+    public MyException(String msg) {
+        super(msg);
+    }
+    
+}
+
+class Bank
+{
+    int TotalAmount=5000;
+    int sendingAmount;
+    
+    Bank(int sendingAmount)
+    {
+        this.sendingAmount = sendingAmount;
+    }
+    
+    void trasnfer()
+    {
+        try{
+            if((sendingAmount<100) | (sendingAmount >TotalAmount))
+                throw new MyException("sending amount is either less than 100 or greater than your total Balance");
+        
+        TotalAmount = TotalAmount - sendingAmount;
+        System.out.println("Transfer Successful.\nYour Total balance:"+TotalAmount);
+        }
+        
+        catch(MyException e)
+        {
+            System.out.println(e.getMessage());
+        }
+        
+        
+    }
+}
+public class ExceptionLab {
+
+    
+    public static void main(String[] args) {
+        System.out.println("Enter the amount to send");
+        Scanner sc = new Scanner(System.in);
+        int amount = sc.nextInt();
+        try{
+            Bank b = new Bank(amount);
+            Class.forName("exceptionlab.Bank");
+            b.trasnfer();
+        }
+        catch(ClassNotFoundException c)
+        {
+            System.out.println("The class name is not valid!!!");
+        }
+        
+    }
+    
+}
+
+
+            
+            
+            
+            
+            
 
 // Q. how to achieve multiple inheritance in java
 
 //Ans : Multiple inheritance in Java can be achieved using interface. Either a class implements multiple interfaces or an interface itself extends multiple interfaces
 
 
+
+            
+            
+            
+            
