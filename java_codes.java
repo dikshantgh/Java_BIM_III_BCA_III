@@ -484,6 +484,42 @@ public class ExceptionLab {
 }
 
 
+
+// Q.thread printing 1 to 10 in delay of 5 seconds
+
+    class MyNumber extends Thread
+    { 
+      @Override
+      public void run() 
+       { 
+         try 
+           { 
+            for(int i=1;i<=10;i++)  // 50 to 100 and 100 to 200
+            { 
+              Thread.sleep(5000);          
+              System.out.println(i); 
+            } 
+            } 
+           catch(InterruptedException e) 
+               { 
+                 System.out.println("Exception..."+e); 
+               } 
+        } 
+    } 
+     
+
+    public class JavaApplication14
+    { 
+      public static void main(String [] args) 
+       { 
+         MyNumber m1 = new MyNumber();  
+         MyNumber m2 = new MyNumber();
+         m1.start();
+         m2.start();
+       } 
+    } 
+
+
             
             
             
