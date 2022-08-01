@@ -520,6 +520,37 @@ public class ExceptionLab {
     } 
 
 
+
+
+import java.util.Scanner;
+
+/**
+ * @Title : Write a program to take a string as input from user,
+ * if the last character is 'd' then replace all the 'd' with '?' otherwise replace 'd' with '#'
+ * @author dikshant
+ */
+public class StringProject {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the string");
+        String sen=sc.nextLine();
+        if(sen.endsWith("d"))
+        {
+            sen = sen.replace("d","?");
+        }
+        else
+            sen = sen.replace("d","#");
+    
+        System.out.println("Output:"+sen);
+    }
+    
+    
+}
+
             
             
             
