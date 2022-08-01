@@ -587,6 +587,51 @@ public class StringProject {
     
 }
 
+
+
+
+import java.util.Scanner;
+
+/**
+ * @Title : Write a program to create a string array of size 10. Ask the user to input 10 animals name 
+ * and find the name with the longest length and substitute that animal name in the array with its name 
+ * and size.[in the given format cat:3].
+ * @author dikshant
+ */
+public class StringProject {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String animals[] = new String[10];
+        int location=0;
+        System.out.println("Enter 10 animal names");
+        for(int i=0;i<10;i++)
+        {
+            animals[i]=sc.nextLine();
+        }
+        String longest_word = animals[0];
+        System.out.println("The output:");
+        for(int i=0;i<10;i++)
+        {
+            if(animals[i].length()>longest_word.length())
+            {
+                longest_word = animals[i];
+                location = i;
+            }
+        }
+        animals[location]=longest_word+":"+longest_word.length();
+        for(String word: animals)
+        {
+            System.out.println(word);
+        }
+    }
+    
+    
+}
+
             
             
             
