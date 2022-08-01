@@ -552,7 +552,41 @@ public class StringProject {
 }
 
             
+
+
+import java.util.Scanner;
+
+/**
+ * @Title : Write a program to take a string as input from user and check if the string length is odd , 
+ * if so then find the middle character otherwise make it odd and concatenate both the odd and even sized string.
+ * @author dikshant
+ */
+public class StringProject {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the string");
+        String sen = sc.nextLine();
+        int len = sen.length();
+        if(len%2!=0)
+        {
+            System.out.println("The string is odd so the middle character is :"+sen.charAt(len/2));
+        }
+        else
+        {
+            String temp = sen;
+            sen = sen.concat("t").concat(temp);
             
+            System.out.println("The string is even so the string after making it odd and concatenation is:"+sen);
+        }
+    }
+    
+    
+}
+
             
             
             
