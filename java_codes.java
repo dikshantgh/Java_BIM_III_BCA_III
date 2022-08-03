@@ -632,6 +632,58 @@ public class StringProject {
     
 }
 
+
+
+/**
+ *@title: thread synchronization in java using synchronized method with Runnable interface
+ * @author dikshant
+ */
+public class Sync1 implements Runnable{
+
+    static int total_balance=1000;
+    public synchronized void withDraw(String name, int withdraw_balance)
+    {
+        if(total_balance>=withdraw_balance)
+        {
+            System.out.println(name +"has withdraw"+withdraw_balance);
+            total_balance = total_balance-withdraw_balance;
+            System.out.println("Remaining balance:"+total_balance);
+        }
+        else
+        {
+            System.out.println(name +"you donot have sufficient balance");
+        }
+    }
+    
+    @Override
+    public void run()
+    {
+        
+        String name = Thread.currentThread().getName();
+        if(name.equals("Ram"))
+            withDraw(name, 600);
+        else if(name.equals("Shyam"))
+            withDraw(name, 700);
+        
+    
+    }
+    
+    public static void main(String[] args) {
+        // TODO code application logic here
+     
+        Sync1 s = new Sync1();
+        Thread t1 = new Thread(s);
+        Thread t2  = new Thread(s);
+        t1.setName("Ram");
+        t2.setName("Shyam");
+        t1.start();
+        t2.start();
+        
+       
+    }
+    
+}
+
             
             
             
