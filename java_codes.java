@@ -1,3 +1,78 @@
+// to print your name
+public class BCA {
+
+    public static void main(String[] args) {
+        System.out.println("James Gosling");
+    }
+    
+}
+
+
+
+// to find the sum of first n natural number
+import java.util.Scanner;
+
+public class Natural {
+    public static void main(String[] args) {
+        
+        /* The Scanner class is used to get user input, and it is found in the java.util package. 
+         Here, reading the input from standard input
+        */
+        Scanner sc = new Scanner(System.in); 
+        System.out.println("Enter the nth term");
+        int n = sc.nextInt(); 
+        int sum =0;
+        for(int i=1;i<=n;i++)
+        {
+            sum=sum+i;
+        }
+        System.out.println("The sum till "+n+"th term is "+sum);
+        
+    }
+    
+}
+
+
+
+
+// to print the first n prime number
+import java.util.Scanner;
+
+public class Prime {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the nth term");
+        int n = sc.nextInt();
+        int initial =2;
+        boolean flag;
+        for(int i=1;i<=n;)
+        {
+            flag = true;
+            for(int j=2;j<=initial/2;j++)
+            {
+                if(initial%j==0)
+                {
+                    flag = false;
+                    break;
+                }
+            }
+            if(flag)
+            {
+                System.out.println(initial);
+                i++;
+            }
+            initial++;
+        }
+        
+    }
+    
+}
+
+
+
+
+
+
 
 //To find the factorial of a number using recursive function
 
