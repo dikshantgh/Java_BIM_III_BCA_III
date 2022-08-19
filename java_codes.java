@@ -857,6 +857,40 @@ public class RecursiveFolder {
 
 
 
+// to filter files with extension .html
+
+import java.io.File;
+import java.io.FilenameFilter;
+
+class ExtOnly implements FilenameFilter {
+	String ext;
+	public ExtOnly(String ext) {
+            this.ext = "." + ext;
+	}
+        @Override
+        // Tests if a specified file should be included in a file list. 
+	public boolean accept(File dir,String name) {
+            
+            return name.endsWith(ext);
+	}
+}
+
+public class FileFilter {
+    public static void main(String[] args) {
+            String dirname = "java";
+	     File f1 = new File(dirname);
+	     FilenameFilter only = new ExtOnly("html");
+             // String[] list = dir.list(new FilenameFilter()
+	     String[] s = f1.list(only);
+            for (String item : s) {
+                System.out.println(item);
+        }
+	}
+}
+
+
+
+
 
 
 
