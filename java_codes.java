@@ -759,6 +759,67 @@ public class Sync1 implements Runnable{
     
 }
 
+
+
+// to create a new file
+import java.io.File;
+import java.io.IOException;
+
+public class FileCreation {
+    public static void main(String[] args) throws IOException {
+        File f = new File("human.txt");
+        f.createNewFile();
+    }
+    
+}
+
+
+
+
+// to create directory/ folder
+import java.io.File;
+import java.io.IOException;
+ 
+public class FileMkdir {
+    public static void main(String[] args) throws IOException {
+        File path = new File("java12/dir");
+        File path1 = new File("apple1");
+        path.mkdirs();      // it creates java12/dir folder 
+        path1.mkdir();      // it create apple1 folder
+    }
+}
+
+
+
+
+// to display all the files and folder in a given directory
+
+import java.io.File;
+
+public class FileDir {
+    public static void main(String[] args) {
+        String dirname = "java";
+        File f1 = new File(dirname);
+        if (f1.isDirectory()) {
+            System.out.println("Directory of " + dirname);
+            File[] s = f1.listFiles();
+            for (File temp: s) {
+                if (temp.isDirectory()) {
+                    System.out.println(temp + ": is a directory");
+                } else {
+                    System.out.println(temp + ": is a file");
+                }
+            }
+        } else {
+            System.out.println(dirname + " is not a directory");
+        }
+    }
+}
+
+
+
+
+
             
             
             
