@@ -820,6 +820,46 @@ public class FileDir {
 
 
 
+
+
+// to display all the files and folders from a given directory and its all sub directory
+import java.io.File;
+
+public class RecursiveFolder {
+    
+     static void check(File temp1)
+    {
+        
+          File[] s = temp1.listFiles();
+          for (File temp: s) {
+              if (temp.isDirectory()) {
+                  System.out.println(temp + ": is a directory");
+                  check(temp);
+                  
+              } else {
+                  System.out.println(temp + ": is a file");
+              }
+          }
+    }
+    
+    public static void main(String[] args) {
+      String dirname = "java";
+      File f1 = new File(dirname);
+      if (f1.isDirectory()) {
+          System.out.println("Listing all directory and files of "+dirname+" folder");
+          check(f1);
+      } else {
+          System.out.println(dirname + " is not a directory");
+      }
+    }
+    
+}
+
+
+
+
+
+
             
             
             
