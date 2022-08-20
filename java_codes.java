@@ -962,6 +962,58 @@ public class FileReaderReadingOnly {
 }
 
 
+// to write and read using BufferedWriter and BufferedReader with FileReader and FileWriter
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class UsingBuffered {
+    public static void main(String[] args) throws IOException {
+        String file_name = "info.txt";
+        Scanner sc = new Scanner(System.in);
+        BufferedWriter writer = new BufferedWriter( new FileWriter(file_name));
+        String content;
+        System.out.println("Enter the string:");
+        try
+        {
+            content = sc.nextLine();
+            writer.write(content);
+        }
+        catch(IOException ex)
+        {
+            System.out.println("Exception has occured "+ ex);
+        }
+        finally
+        {
+            writer.flush();
+            writer.close();
+        }
+        
+        BufferedReader reader = new BufferedReader(new FileReader(file_name));
+        int ch;
+        try{
+            while((ch=reader.read())!=-1)
+            {
+                System.out.print((char)ch);
+            }
+        }
+        catch(IOException ex)
+        {
+            System.out.println(ex);
+        }
+        finally
+        {
+            reader.close();
+        }
+    }
+}
+
+
+
 
 
             
