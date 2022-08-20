@@ -891,6 +891,44 @@ public class FileFilter {
 
 
 
+// using FileWriter to write in a file
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+
+public class CharacterStreams {
+    
+    public static void main(String[] args) throws IOException {
+        String s;
+        Scanner sc = new Scanner(System.in);
+        FileWriter writer = new FileWriter("hsm100.txt", true);
+        System.out.println("Enter the string you want to write in the file:");   
+ 
+        try{
+            s=sc.nextLine();
+            writer .write(s);
+            System.out.println("File Successfully written");
+        }
+        
+        catch(IOException ex)
+        {
+            System.out.println("An exception has occured"+ ex);
+        }
+        finally{
+            writer.flush();
+            writer.close();
+        }
+
+        }
+       
+    }
+   
+
+
+
+
 
 
 
