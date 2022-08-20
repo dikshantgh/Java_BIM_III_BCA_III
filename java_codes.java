@@ -929,6 +929,38 @@ public class CharacterStreams {
 
 
 
+// to read from a file using FileReader
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class FileReaderReadingOnly {
+    public static void main(String[] args) throws FileNotFoundException, IOException {
+       String file_name = "hsm100.txt";
+       FileReader reader = new FileReader(file_name);
+       int ch; 
+       try{
+            while((ch = reader.read())!=-1)
+            {
+                System.out.print((char)ch);
+            }
+        }
+        catch(IOException ex)
+        {
+            System.out.println("An exceptiion has occured "+ ex);
+        }
+        
+        finally
+        {
+            reader.close();
+        }
+                   
+    }
+    
+    
+}
+
 
 
 
