@@ -70,6 +70,39 @@ public class Prime {
 
 
 
+// use of parameterized constructor to initialize the objects
+public class Box {
+    
+    int length;
+    int height;
+    String color;
+    
+    Box(int length, int height, String color)
+    {
+       this.length =length;
+       this.height = height;
+       this.color =  color;
+    }
+    
+    void display()
+    {
+        System.out.println("The output is "+ color + " "+ length+ " "+height);
+    }
+    
+   
+    public static void main(String[] args) {
+       Box b = new Box(12,13,"red");
+       b.display();
+        
+    }
+    
+}
+
+
+
+
+
+
 
 
 
