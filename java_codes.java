@@ -1048,9 +1048,209 @@ public class UsingBuffered {
 
 
 
+// to write and read students information in a file
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
 
-            
-            
+
+
+public class UsingBuffered{
+    public static void main(String[] args) throws IOException {
+        String file_name = "info.txt";
+        Scanner sc = new Scanner(System.in);
+        BufferedWriter writer = new BufferedWriter( new FileWriter(file_name));
+        String name;
+        int age;
+        System.out.println("Enter the student detail:");
+        
+        try
+        {
+            for(int i=0;i<=2;i++){
+            System.out.println("Enter the name and age");
+            name = sc.nextLine();
+            age=sc.nextInt();
+            writer.write(name+"\t"+age+"\n");
+            sc.nextLine();
+            }
+        }
+        catch(Exception ex)
+        {
+            System.out.println("Exception has occured "+ ex);
+            ex.printStackTrace();
+        }
+        finally
+        {
+            writer.flush();
+            writer.close();
+        }
+        
+        BufferedReader reader = new BufferedReader(new FileReader(file_name));
+        int ch;
+        try{
+            while((ch=reader.read())!=-1)
+            {
+                System.out.print((char)ch);
+            }
+        }
+        catch(IOException ex)
+        {
+            System.out.println(ex);
+        }
+        finally
+        {
+            reader.close();
+        }
+    }
+
+	
+
+
+
+	// to count the total word in a file and also count "this" word in the file
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class WoedCount {
+    public static void main(String[] args) throws IOException 
+   {
+      File f1=new File("input.txt"); //Creation of File Descriptor for input file
+      String[] words=null;    //Intialize the word Array
+      int wc=0;     //Intialize word count to zero
+      int count=0;
+      FileReader fr = new FileReader(f1);    //Creation of File Reader object
+      BufferedReader br = new BufferedReader(fr);    //Creation of BufferedReader object
+      String s;
+      while((s=br.readLine())!=null)    //Reading Content from the file
+      {
+         words=s.split(" ");   //Split the word using space
+         wc=wc+words.length;   //increase the word count for each word
+         for(String temp : words)
+         {
+             if(temp.equals("this"))
+                 count++;
+         }
+      }
+      fr.close();
+      System.out.println("Number of words in the file:" +wc+ "and house is "+count);    //Print the word count
+   }
+    
+}
+
+
+	
+	
+	
+
+// using bytestream to write and read the file
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class BytestreamzReadandWrite {
+    public static void main(String[] args) throws IOException {
+        
+        FileOutputStream writer = new FileOutputStream("hsm1.txt");
+        Scanner sc = new Scanner(System.in);
+        int age;
+        String name;
+        System.out.println("Enter the name");
+        name = sc.nextLine();
+        System.out.println("Enter the age");
+        age = sc.nextInt();
+        String Age = Integer.toString(age);
+        
+        byte b_name [] = name.getBytes();
+        byte b_age []= Age.getBytes();
+        
+        writer.write(b_name);
+        writer.write(b_age);
+        
+        
+        writer.flush();
+        writer.close();
+        
+        FileInputStream reader = new FileInputStream("hsm1.txt");
+        int ch;
+        while((ch=reader.read())!=-1)
+        {
+            System.out.print((char)ch);
+        }
+        reader.close();
+        
+        
+        
+        
+        
+    }
+    
+}
+
+        
+	
+	
+	
+	
+	// serialize concept in java
+// Serialization is a mechanism of converting the state of an object into a byte stream. Deserialization is the reverse process.
+// In serialization, everything is taken care of by JVM and the programmer doesn’t have any control. In serialization, it is always
+//possible to solve the total object to file, and it is not possible to save part of the object which may create performance problems.
+// In Externalizable, everything is taken care of by the programmer and JVM doesn’t have any control. 
+	
+import java.io.*;
+
+class MyClass implements Serializable {
+    String s;
+    int i;
+    double d;
+    
+    public MyClass(String s, int i, double d) {
+        this.s = s;
+        this.i = i;
+        this.d = d;
+}
+    public String toString() {
+        return "s=" + s + "; i=" + i + "; d=" + d;
+}
+}
+
+public class Serializezzz {
+    public static void main(String[] args) {
+        // Object serialization
+        try ( ObjectOutputStream objOStrm =
+        new ObjectOutputStream(new FileOutputStream("serial.txt")) )
+        {
+            MyClass object1 = new MyClass("Hello", -7, 2.7e10);
+            System.out.println("object1: " + object1);
+            objOStrm.writeObject(object1);
+            }
+            catch(IOException e) {
+                System.out.println("Exception during serialization: " + e);
+            }
+            // Object deserialization
+            try ( ObjectInputStream objIStrm =
+                new ObjectInputStream(new FileInputStream("serial.txt")) )
+            {
+                MyClass object2 = (MyClass)objIStrm.readObject();
+                System.out.println("object2: " + object2);
+            }
+            catch(Exception e) {
+                System.out.println("Exception during deserialization: " + e);
+            }
+}
+}
+
+
+	
+	
+	
             
 
 // Q. how to achieve multiple inheritance in java
