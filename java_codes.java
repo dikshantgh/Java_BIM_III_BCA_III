@@ -1263,3 +1263,92 @@ public class Serializezzz {
             
             
             
+
+	
+	
+	// 2022 question Product class
+	
+class Product
+{
+    String name;
+    int qty;
+    int price;
+    
+    Product(String name, int qty, int price)
+    {
+        this.name = name;
+        this.qty = qty;
+        this.price = price;
+    }
+    
+    String getName()
+    {
+       return name; 
+    }
+    
+    int getQty()
+    {
+        return qty;
+    }
+    
+    int getPrice()
+    {
+        return price;
+    }
+    
+    int getTotal()
+    {
+        return getQty() * getPrice();
+    }
+}
+
+public class ProductDemo {
+    public static void main(String[] args) {
+        Product p1 = new Product("pen", 10, 20);
+        Product p2 = new Product("book", 200, 200);
+     
+     
+        System.out.println("The price of p1 :"+p1.getTotal() );
+        System.out.println("The price of p2 :"+ p2.getTotal());
+    }
+    
+}
+
+	
+	
+	
+	
+	// second largest
+	
+import java.util.Scanner;
+
+public class JavaApplication42 {
+
+    public static void main(String[] args) {
+        
+        int a[] = new int[5];
+        
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter 5 integer values:");
+        for(int i=0;i<5;i++)
+        {
+            a[i]= sc.nextInt();
+        }
+               
+        for(int i=0;i<5;i++)
+        {
+            for(int j=i+1;j<5;j++)
+            {
+                if(a[i]>a[j])
+                {
+                    int temp = a[i];
+                    a[i] =a[j];
+                    a[j] = temp;
+                }
+            }
+        }
+        int size = 5-2;
+        System.out.println("The second largest is"+a[size]);
+    }
+    
+}
