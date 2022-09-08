@@ -1352,3 +1352,55 @@ public class JavaApplication42 {
     }
     
 }
+
+	
+	
+	
+	// user defined exception 2022
+	
+class NotEligibleException extends Exception
+{
+
+    NotEligibleException(String msg) {
+        super(msg);
+    }
+    
+}
+
+class Person {
+    
+    int age;
+    String name;
+    
+    Person(int age, String name)
+    {
+        this.age = age;
+        this.name = name;
+    }
+    
+    void check()
+    {
+        try{
+        if(age<1 | age>100)
+        {
+            throw new NotEligibleException("Your age is not legal!!");
+        }
+        System.out.println("Your age is legal");
+        }
+        catch(NotEligibleException ex)
+        {
+            System.out.println(ex.getMessage());
+        }
+    }
+    
+    public static void main(String[] args) {
+        
+        Person v = new Person(200,"ram");
+        v.check();
+        
+        
+    }
+    
+}
+	
+	
