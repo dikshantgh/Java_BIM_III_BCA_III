@@ -1,3 +1,68 @@
+
+
+
+// Program to take name and age as input from user and display in proper format
+
+import java.util.Scanner;
+
+public class Student {
+    public static void main(String[] args) {
+        int age;
+        String name;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the name:");
+        name = sc.nextLine();
+        System.out.println("Enter the age:");
+        age = sc.nextInt();
+        
+        System.out.println("My name is "+name+" and my age is "+age);
+    }
+}
+
+
+
+// Program to display the mathematical table for any given number
+
+import java.util.Scanner;
+
+public class Table {
+    public static void main(String[] args) {
+        int number;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number for table:");
+        number = sc.nextInt();
+        
+        for(int i=1;i<=10;i++)
+        {
+            System.out.println(number +"X" + i + "=" + number*i);
+            //System.out.printf("%d X %d = %d\n", number,i,number*i);
+        }
+        
+    }
+}
+
+
+
+
+// Program to take command line arguments as input and display in proper format
+
+
+public class CLA {
+    public static void main(String[] args) {
+        
+        System.out.println("The total number of arguments passed :"+args.length+ ". The following are the arguments passed:");
+        for(int i=0;i<args.length;i++)
+        {
+            System.out.println(args[i]);
+        }
+        
+    }
+}
+
+
+
+
+
 // to print your name
 public class BCA {
 
