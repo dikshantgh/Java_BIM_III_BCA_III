@@ -1469,3 +1469,108 @@ class Person {
 }
 	
 	
+	
+	
+	
+	
+	// abstract class example
+abstract class Fmachine
+{
+    abstract void getData(int code, String name, int capacity);
+    abstract void putData();
+   
+}
+
+class Airplane extends Fmachine
+{
+    int code;
+    String name;
+    int capacity;
+    
+    @Override
+    void getData(int code, String name, int capacity)
+    {
+        this.code = code;
+        this.name = name;
+        this.capacity = capacity;
+    }
+    @Override
+    void putData()
+    {
+        System.out.println(code+","+name+","+capacity);
+    }
+}
+
+
+public class Machine {
+    public static void main(String[] args) {
+        Airplane a = new Airplane();
+        a.getData(12, "red alert", 123);
+        a.putData();
+        
+    }
+    
+}
+
+	
+	
+	
+	
+//interface example
+
+public interface Shape {
+    public void get_data(int length, int breadth);
+    public void  display_area();
+    
+}
+	
+	
+
+class Rectangle implements Shape
+{
+    int length, breadth;
+    @Override
+    public void get_data(int length, int breadth)
+    {
+        this.length = length;
+        this.breadth = breadth;
+    }
+    
+    @Override
+    public void display_area()
+    {
+        System.out.println("The area of rectangle is"+ length*breadth);
+    }
+    
+}
+
+class Square implements Shape
+{
+    int length;
+    @Override
+    public void get_data(int length, int breadth)
+    {
+        this. length= length;
+        //this.breadth = breadth;
+    }
+    
+    @Override
+    public void display_area()
+    {
+        System.out.println("The area of square is"+ length*length);
+    }
+    
+}
+
+public class InterfaceClass {
+    public static void main(String[] args) {
+        Rectangle r = new Rectangle();
+        Square s = new Square();
+        r.get_data(12,2);
+        s.get_data(2,0);
+        r.display_area();
+        s.display_area();
+    }
+    
+}
+	
