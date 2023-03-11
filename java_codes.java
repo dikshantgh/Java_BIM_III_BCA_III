@@ -1574,3 +1574,39 @@ public class InterfaceClass {
     
 }
 	
+
+	
+	
+	//Write a program by using generic method to swap the positions of two different//
+//elements in an array.
+	
+	
+	public class SwapArrayElements {
+
+    public static <T> void swap(T[] arr, int i, int j) {
+        T temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+    public static void main(String[] args) {
+        Integer[] intArr = {1, 2, 3, 4, 5};
+        String[] strArr = {"apple", "banana", "cherry", "date", "elderberry"};
+
+        // swap two elements in the integer array
+        swap(intArr, 1, 3);
+        System.out.println(Arrays.toString(intArr)); // [1, 4, 3, 2, 5]
+
+        // swap two elements in the string array
+        swap(strArr, 0, 4);
+        System.out.println(Arrays.toString(strArr)); // ["elderberry", "banana", "cherry", "date", "apple"]
+    }
+}
+
+	
+	
+	
+	
+	
+	
+	
